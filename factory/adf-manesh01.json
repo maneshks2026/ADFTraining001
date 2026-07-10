@@ -1,0 +1,15 @@
+{
+	"name": "adf-manesh01",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6e42f8da-d7a3-49ed-9edb-35a0b9ae1bff",
+		"tenantId": "222c51f4-5a16-4117-a60d-89e0b90e143b"
+	}
+}
