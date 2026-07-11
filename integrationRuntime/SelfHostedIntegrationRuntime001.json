@@ -1,0 +1,7 @@
+{
+	"name": "SelfHostedIntegrationRuntime001",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "for SQL on-premise"
+	}
+}
