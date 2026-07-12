@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-manesh01"
+		},
+		"LS_API_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_BLOBDATAFILE_connectionString": {
+			"value": ""
+		},
+		"LS_INPUT_BLOB_ADLS_connectionString": {
+			"value": ""
+		},
+		"LS_Input_MultiCSV_Parquet_connectionString": {
+			"value": ""
+		},
+		"LS_MultiCSV_Input_connectionString": {
+			"value": ""
+		},
+		"LS_Multi_outputcsv_parquet_accountKey": {
+			"value": ""
+		},
+		"LS_OUTPUTBLOB_accountKey": {
+			"value": ""
+		},
+		"LS_Output_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_INPUT_password": {
+			"value": ""
+		},
+		"SQL_OUTPUT_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_API_ADLS_properties_typeProperties_url": {
+			"value": "https://azstorageadlsmanesh01.dfs.core.windows.net/"
+		},
+		"LS_Multi_outputcsv_parquet_properties_typeProperties_url": {
+			"value": "https://azstorageadlsmanesh01.dfs.core.windows.net/"
+		},
+		"LS_OUTPUTBLOB_properties_typeProperties_url": {
+			"value": "https://azstorageadlsmanesh01.dfs.core.windows.net/"
+		},
+		"LS_Output_Parquet_properties_typeProperties_url": {
+			"value": "https://azstorageadlsmanesh01.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_ADLS_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SQL_INPUT_properties_typeProperties_server": {
+			"value": "SARANYAMANESH"
+		},
+		"LS_SQL_INPUT_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SQL_INPUT_properties_typeProperties_userName": {
+			"value": "manesh"
+		},
+		"SQL_OUTPUT_Parquet_properties_typeProperties_url": {
+			"value": "https://azstorageadlsmanesh01.dfs.core.windows.net/"
+		}
+	}
+}
