@@ -1,0 +1,24 @@
+{
+	"name": "LS_SQL_INPUT",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "SARANYAMANESH",
+			"database": "AdventureWorks2022",
+			"encrypt": "False",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "manesh",
+			"pooling": "False",
+			"multipleActiveResultSets": "False",
+			"commandTimeout": "0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmOTg5YmY4ZC1mNzVkLTRmOTYtYmJjOS03MjllZjFlN2U2NGEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfHostedIntegrationRuntime001",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
