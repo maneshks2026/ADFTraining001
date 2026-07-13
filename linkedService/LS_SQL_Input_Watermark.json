@@ -6,7 +6,7 @@
 		"type": "SqlServer",
 		"typeProperties": {
 			"server": "SARANYAMANESH",
-			"database": "AdventureWorks2022",
+			"database": "azProject",
 			"encrypt": "False",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
@@ -14,7 +14,7 @@
 			"pooling": "False",
 			"multipleActiveResultSets": "False",
 			"commandTimeout": "0",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NjlhYWQwNy01ZGYzLTRmNDAtYjVmZi1iOTBlMDNhNzVlMTQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhZjIwNmE3Mi0yNDI2LTQ2MWMtODE4Yi0wMTVkYzYxMGMxMzAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SelfHostedIntegrationRuntime001",
