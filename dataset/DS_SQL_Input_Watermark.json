@@ -35,8 +35,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "ADF_Watermark_Table"
+			"schema": {
+				"value": "@dataset().SchemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
 		}
 	}
 }
