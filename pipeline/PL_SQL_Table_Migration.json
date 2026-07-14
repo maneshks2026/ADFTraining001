@@ -1,0 +1,52 @@
+{
+	"name": "PL_SQL_Table_Migration",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lkp_SQL_Migration",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT TableSchema, TableName, WatermarkColumn, LastLoadValue FROM dbo.ADF_Watermark_Table;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQLServer_Tbllkup",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "ForEachSQlTable",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lkp_SQL_Migration",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lkp_SQL_Migration').output.value",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
