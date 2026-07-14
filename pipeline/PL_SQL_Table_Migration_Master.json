@@ -1,5 +1,5 @@
 {
-	"name": "PL_SQL_Table_Migration",
+	"name": "PL_SQL_Table_Migration_Master",
 	"properties": {
 		"activities": [
 			{
@@ -43,7 +43,21 @@
 					"items": {
 						"value": "@activity('Lkp_SQL_Migration').output.value",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "Exec_ChildPipeline",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"waitOnCompletion": true
+							}
+						}
+					]
 				}
 			}
 		],
