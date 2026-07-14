@@ -1,0 +1,24 @@
+{
+	"name": "LS_SQLServerLkup",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "SARANYAMANESH",
+			"database": "azProject",
+			"encrypt": "False",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "manesh",
+			"pooling": "False",
+			"multipleActiveResultSets": "False",
+			"commandTimeout": "0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2MDNlMTAwNi04OWZmLTQwNmYtYTMwZi1jZmU0NDcxZTdjYmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfHostedIntegrationRuntime001",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
