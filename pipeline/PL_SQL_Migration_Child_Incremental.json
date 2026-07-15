@@ -49,18 +49,6 @@
 					},
 					"ifTrueActivities": [
 						{
-							"name": "PL_SQL_Migration_Child_Incremental",
-							"type": "ExecutePipeline",
-							"dependsOn": [],
-							"policy": {
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"waitOnCompletion": true
-							}
-						},
-						{
 							"name": "Cpy_FullData_LoadTables",
 							"type": "Copy",
 							"dependsOn": [],
