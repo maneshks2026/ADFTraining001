@@ -1,0 +1,98 @@
+{
+	"name": "PL_Copy_SQL_Full_load",
+	"properties": {
+		"activities": [
+			{
+				"name": "Cpy_SQL_FullLoad",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "@concat(\r\n    'SELECT * FROM ',\r\n    pipeline().parameters.TableSchema, '.', pipeline().parameters.TableName,\r\n    if(\r\n        equals(pipeline().parameters.LastLoadValue, null),\r\n        '', \r\n        concat(\r\n            ' WHERE ', pipeline().parameters.WatermarkColumn,\r\n            ' > ''', pipeline().parameters.LastLoadValue, ''''\r\n        )\r\n    )\r\n)",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_lkup_max_value",
+						"type": "DatasetReference",
+						"parameters": {
+							"SchemaName": {
+								"value": "pipeline().parameters.TableSchema",
+								"type": "Expression"
+							},
+							"TableName": {
+								"value": "pipeline().parameters.TableName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Output_SQL_Parquet",
+						"type": "DatasetReference",
+						"parameters": {
+							"Table_Name": {
+								"value": "@pipeline().parameters.TableName",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			},
+			{
+				"name": "Exec_Update_Watermark",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Cpy_SQL_FullLoad",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_StoredProcedureExecution",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
