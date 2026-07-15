@@ -5,6 +5,11 @@
 			"referenceName": "SQL_OUTPUT_Parquet",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
