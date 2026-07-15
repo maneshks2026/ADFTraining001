@@ -1,0 +1,24 @@
+{
+	"name": "DS_Output_SQL_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Output_SQL_Parquet",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "sql-parquet-output"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
