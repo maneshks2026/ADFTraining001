@@ -125,7 +125,7 @@
 								{
 									"activity": "Cpy_FullData_LoadTables",
 									"dependencyConditions": [
-										"Completed"
+										"Succeeded"
 									]
 								}
 							],
