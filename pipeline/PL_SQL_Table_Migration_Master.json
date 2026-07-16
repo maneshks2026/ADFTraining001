@@ -24,7 +24,8 @@
 					"dataset": {
 						"referenceName": "DS_SQLServer_Tbllkup",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -44,6 +45,7 @@
 						"value": "@activity('Lkp_SQL_Migration').output.value",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "Exec_ChildPipeline",
